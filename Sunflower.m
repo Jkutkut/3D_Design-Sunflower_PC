@@ -3,8 +3,8 @@ s = 0.01;
 r = sunflower(l, s);
 points = [real(r); imag(r); zeros(1, l/s)]';
 scatter(real(r),imag(r));
-offs = 1.2;
-axis([-offs, offs, -offs, offs])
+offs = 0.2;
+axis([l-offs, l+offs, l-offs, l+offs])
 grid
 
 save('myFile.txt', 'points', '-ASCII','-append');
