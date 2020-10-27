@@ -2,6 +2,9 @@ l = 1;
 s = 0.001;
 r = sunflower(l, s);
 scatter(real(r),imag(r));
+offs = 1.2;
+axis([-offs, offs, -offs, offs])
+grid
 
 
 function [r] = sunflower(l, s)
