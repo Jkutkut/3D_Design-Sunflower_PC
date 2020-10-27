@@ -1,21 +1,20 @@
 l = 1;
 s = 0.01;
 r = sunflower(l, s);
-points = [real(r), imag(r), zeros(l/s)];
+points = [real(r); imag(r); zeros(1, l/s)]';
 scatter(real(r),imag(r));
 offs = 1.2;
 axis([-offs, offs, -offs, offs])
 grid
 
-
+save('myFile.txt', 'points', '-ASCII','-append');
 function [r] = sunflower(l, s)
-%     r = zeros(l / s);
-    r = [];
-    PHI = 137.5077640500378546463487;
-    phi = 0;
-    for a=0:s:l
-        phi=phi + PHI;
-        r(end + 1) = a * exp(1j * phi);
+    N = l / s;
+    r = zeros(1, N);
+    PHI = 137.507764;
+    A = 0:s:l;
+    for a=1:N
+        r(a) = A(a) * exp(1j * PHI * a);
     end
 end
 
