@@ -1,2 +1,1 @@
-* linguist-vendored
-MathLab/*.m linguist-vendored=false
+MathLab/*.m linguist-vendored
